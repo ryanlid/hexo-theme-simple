@@ -1,0 +1,210 @@
+@import (inline) "https://cdn.bootcss.com/normalize/5.0.0/normalize.min.css";
+*{
+  box-sizing: border-box;
+}
+body {
+  //background: #ddd;
+  color: #666;
+  font-size: 14px;
+  font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica,Arial', sans-serif;
+  background: #ddd url("https://static.lidong.me/img/2017/03/roman-logov-100555.jpg") no-repeat fixed;
+  background-size: cover;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.titlewrapper {
+  text-align: center;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  //padding-bottom: 30px;
+  //border-bottom: solid #c0c0c0 1px;
+  text-align: center;
+  &:after {
+    clear: both;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    width: 20%;
+
+    float: left;
+    a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      background: #c0c0c0;
+      &:hover {
+        background: #d9d9d9;
+      }
+    }
+    //display: table-cell;
+    //text-align: justify;
+
+  }
+
+}
+
+.wrap {
+  width: 800px;
+  margin-top: 20px;
+  //padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ddd;
+  //padding: auto 15px
+  //border-top: solid #c0c0c0 1px;
+  //max-width: 100%;
+  padding: 20px;
+  //padding-bottom: 20px;
+
+}
+
+//.post-list:first-child {
+//  border-top: solid #c0c0c0 1px;
+//}
+
+.post-list, .archive-list {
+  width: 640px;
+  height: 66px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  h1 {
+    line-height: 125%;
+    font-size: 20px;
+  }
+}
+
+//.post-list-title {
+//
+//}
+
+.sidebar {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ddd;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      list-style: none;
+    }
+  }
+  .tagcloud a {
+    display: inline-block;
+
+    padding: 0 10px;
+  }
+  .archives li {
+    padding: 0 20px;
+  }
+}
+
+.archive-list-link {
+  display: block;
+  margin: 10px;
+}
+
+footer {
+  margin: 40px auto;
+  text-align: center;
+  background: #ddd;
+}
+
+//文章目录
+.toc-container {
+  float: right;
+  border: solid 1px #cccccc;
+  margin-left: 10px;
+
+  ol {
+    //margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style: none;
+    li {
+      padding: 5px 0;
+
+    }
+  }
+}
+
+// 文章内容
+article {
+  .article-content {
+    color: #444;
+    font-size: 16px;
+    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体', 'Helvetica,Tahoma', 'Arial sans-serif';
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8;
+    word-wrap: break-word;
+  }
+  img {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 10px 0 5px;
+    max-width: 100%;
+    padding: 0;
+  }
+  .highlight {
+
+  }
+  .highlight {
+    max-width: 100%;
+    padding: 5px 0px 5px 0;
+    overflow-x: auto;
+    background: #eee;
+    margin: 15px 0;
+    position: relative;
+    figcaption {
+      text-align: right;
+      background: #d9d9d9;
+    }
+    .gutter {
+      //position: absolute;
+      //background: #c0c0c0;
+      //left: px;
+      width: 20px;
+      text-align: center;
+    }
+    .code {
+      pre {
+        background: transparent;
+        //
+        //max-width: 100%;
+      }
+    }
+    td {
+      border: none;
+      padding: 0;
+    }
+
+    .line {
+      height: 22.400000000000002px;
+    }
+
+  }
+}
+

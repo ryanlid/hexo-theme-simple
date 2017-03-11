@@ -1,0 +1,16 @@
+extends _partial/layout
+
+block site-title
+  config.name
+
+block content
+  div.wrap
+    article.post
+      h1.title= page.title
+      div.toc-container.clearfix!= toc(page.content, {list_number: false})
+      .article-content!= page.content
+
+      if list_tags(page.tags)
+        div.post-info!= "发表于" + date(page.date, 'YYYY/M/D H:mm:ss') + "，并被添加「 " + list_tags(page.tags, {show_count: false,style: false}) + " 」标签，最后修改于" + date(page.updated, 'YYYY/M/D H:mm:ss')
+      else
+        div.post-info!= "发表于" + date(page.date, 'YYYY/M/D H:mm:ss') + "，最后修改于" + date(page.updated, 'YYYY/M/D H:mm:ss')

@@ -1,0 +1,8 @@
+# Header
+menu:
+  Home: https://lidong.me
+  Blog: /
+  Archives: /archives
+  Labs: https://labs.lidong.me/
+  OldBlog: https://blog.lidong.me
+rss: /blog/atom.xml

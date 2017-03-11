@@ -1,0 +1,18 @@
+extends _partial/layout
+
+block site-title
+  pagr.title
+
+
+block content
+  div.wrap
+    each post in site.posts.sort('date',-1).toArray()
+      .post.post-list
+        a.post-link(href=url_for(post.path))
+          h1.post-list-title=post.title
+        div.post-list-meta
+          span.post-list-link-time(datetime=date_xml(post.date))= date(post.date)
+          | &nbsp;| &nbsp;
+          span!= "标签：" + list_tags(post.tags, {show_count: false, style: false})
+
+

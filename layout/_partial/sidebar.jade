@@ -1,0 +1,7 @@
+aside.sidebar
+  div
+    div.tagcloud!= tagcloud({min_font: 14})
+
+  div.clearfix
+    hr
+    div.archives!= list_archives({show_count: false, format: "MMMM YYYY"})

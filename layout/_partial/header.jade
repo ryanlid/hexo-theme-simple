@@ -1,0 +1,7 @@
+div.titlewrapper
+  h1= config.title
+nav.clearfix
+  ul
+  each link,index in theme.menu
+    li
+      a(href=url_for(link))= index
