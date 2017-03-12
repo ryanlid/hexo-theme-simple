@@ -4,7 +4,7 @@ html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    link(rel='stylesheet', href='http://file.dob.im/style.css')
+    link(rel="stylesheet",href= url_for('css/style.css'))
     block site-title
   body
 
@@ -15,16 +15,18 @@ html
       each link,index in theme.menu
         li
           a(href=url_for(link))= index
+    div.wrap
+      div.main
+        block content
 
-    block content
+      aside.sidebar
+        div
+          hr
+          div.tagcloud!= tagcloud({min_font: 14})
 
-    aside.sidebar
-      div
-        div.tagcloud!= tagcloud({min_font: 14})
-
-      div.clearfix
-        hr
-        div.archives!= list_archives({show_count: false, format: "MMMM YYYY"})
+        div.clearfix
+          hr
+          div.archives!= list_archives({show_count: false, format: "MMMM YYYY"})
     footer
       .copyrigt
       | Power by hexo theme by oonnnoo
