@@ -1,12 +1,12 @@
 extends _partial/layout
-
 block content
-    article.post
-      h1.title= page.title
-      div.toc-container.clearfix!= toc(page.content, {list_number: false})
-      .article-content!= page.content
-
-      if list_tags(page.tags)
-        div.post-info!= "发表于" + date(page.date, 'YYYY/M/D H:mm:ss') + "，并被添加「 " + list_tags(page.tags, {show_count: false,style: false}) + " 」标签，最后修改于" + date(page.updated, 'YYYY/M/D H:mm:ss')
-      else
-        div.post-info!= "发表于" + date(page.date, 'YYYY/M/D H:mm:ss') + "，最后修改于" + date(page.updated, 'YYYY/M/D H:mm:ss')
+  article.post(itemscope itemtype="http://schema.org/Article", id= page.layout + "-" + page.slug )
+    h1.title(itemprop="name")= page.title
+    div.toc-container.clearfix!= toc(page.content, {list_number: false})
+    .article-content(itemprop="articleBody")!= page.content
+      p= "本文链接："
+        a(href= url_for(page.permalink) title= page.title itemprop="url")= page.permalink
+      div.post-info= "发表于"
+        time(itemprop= "datePublished", content= date_xml(page.date))= date(page.date, "YYYY/M/D H:mm:ss")
+        span!= ",并被添加「 " + list_tags(page.tags, {show_count: false, style: false}) + " 」标签，最后修改于"
+        time(itemprop= "dateModified", content= date_xml(page.updated))= date(page.updated, "YYYY/M/D H:mm:ss")
