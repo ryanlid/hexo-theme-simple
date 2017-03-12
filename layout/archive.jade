@@ -1,9 +1,5 @@
 extends _partial/layout
 
-block site-title
-  pagr.title
-
-
 block content
     each post in site.posts.sort('date',-1).toArray()
       .post.post-list
