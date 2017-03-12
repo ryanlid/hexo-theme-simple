@@ -1,5 +1,6 @@
 @import (inline) "https://cdn.bootcss.com/normalize/5.0.0/normalize.min.css";
-*{
+
+* {
   box-sizing: border-box;
 }
 body {
@@ -18,6 +19,12 @@ a {
     text-decoration: underline;
   }
 }
+pre{
+  margin: 0;
+  padding: 0;
+  color: #ccc;
+  background: #2d2d2d;
+}
 
 .titlewrapper {
   text-align: center;
@@ -31,6 +38,7 @@ a {
 
 nav {
   width: 800px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   //padding-bottom: 30px;
@@ -66,6 +74,7 @@ nav {
 
 .wrap {
   width: 800px;
+  max-width: 100%;
   margin-top: 20px;
   //padding-top: 10px;
   margin-left: auto;
@@ -84,7 +93,7 @@ nav {
 //}
 
 .post-list, .archive-list {
-  width: 640px;
+  //width: 640px;
   height: 66px;
   margin-left: auto;
   margin-right: auto;
@@ -127,7 +136,9 @@ nav {
 }
 
 footer {
-  margin: 40px auto;
+  margin: 20px auto;
+  width: 800px;
+  max-width: 100%;
   text-align: center;
   background: #ddd;
 }
@@ -159,6 +170,17 @@ article {
     -webkit-font-smoothing: antialiased;
     line-height: 1.8;
     word-wrap: break-word;
+    & > pre {
+      background: #2d2d2d;
+      //max-width: 100%;
+      overflow-x: auto;
+      code {
+        background: transparent;
+        overflow-x: auto;
+        //
+
+      }
+    }
   }
   img {
     border: 1px solid #ccc;
@@ -168,15 +190,14 @@ article {
     padding: 0;
   }
   .highlight {
-
-  }
-  .highlight {
     max-width: 100%;
-    padding: 5px 0px 5px 0;
+    padding: 15px 20px;
     overflow-x: auto;
-    background: #eee;
-    margin: 15px 0;
-    position: relative;
+    background: #2d2d2d;
+    margin: 20px 0;
+    //position: relative;
+
+
     figcaption {
       text-align: right;
       background: #d9d9d9;
@@ -187,12 +208,9 @@ article {
       //left: px;
       width: 20px;
       text-align: center;
-    }
-    .code {
-      pre {
-        background: transparent;
-        //
-        //max-width: 100%;
+      pre{
+        padding-right: 20px;
+        text-align: right;
       }
     }
     td {
@@ -205,5 +223,65 @@ article {
     }
 
   }
+  .post-info{
+    padding:  20px 0;
+  }
 }
 
+
+pre .comment,
+pre .title {
+  color: #999;
+}
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #f99157;
+}
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+  color: #9c9;
+}
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #9c9;
+}
+pre .css .hexcolor {
+  color: #6cc;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #69c;
+}
+pre .keyword,
+pre .javascript .function {
+  color: #c9c;
+}
