@@ -1,10 +1,9 @@
 @import (inline) "https://cdn.bootcss.com/normalize/5.0.0/normalize.min.css";
-
 * {
   box-sizing: border-box;
 }
+
 body {
-  //background: #ddd;
   color: #666;
   font-size: 14px;
   font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica,Arial', sans-serif;
@@ -19,7 +18,8 @@ a {
     text-decoration: underline;
   }
 }
-pre{
+
+pre {
   margin: 0;
   padding: 0;
   color: #ccc;
@@ -41,8 +41,6 @@ nav {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  //padding-bottom: 30px;
-  //border-bottom: solid #c0c0c0 1px;
   text-align: center;
   &:after {
     clear: both;
@@ -54,7 +52,6 @@ nav {
   li {
     list-style: none;
     width: 20%;
-
     float: left;
     a {
       display: block;
@@ -65,35 +62,22 @@ nav {
         background: #d9d9d9;
       }
     }
-    //display: table-cell;
-    //text-align: justify;
-
   }
-
 }
 
 .wrap {
   width: 800px;
   max-width: 100%;
   margin-top: 20px;
-  //padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
   background: #ddd;
-  //padding: auto 15px
-  //border-top: solid #c0c0c0 1px;
-  //max-width: 100%;
   padding: 20px;
-  //padding-bottom: 20px;
-
 }
 
-//.post-list:first-child {
-//  border-top: solid #c0c0c0 1px;
-//}
 
-.post-list, .archive-list {
-  //width: 640px;
+.post-list,
+.archive-list {
   height: 66px;
   margin-left: auto;
   margin-right: auto;
@@ -103,10 +87,6 @@ nav {
     font-size: 20px;
   }
 }
-
-//.post-list-title {
-//
-//}
 
 .sidebar {
   margin-left: auto;
@@ -122,7 +102,6 @@ nav {
   }
   .tagcloud a {
     display: inline-block;
-
     padding: 0 10px;
   }
   .archives li {
@@ -148,15 +127,12 @@ footer {
   float: right;
   border: solid 1px #cccccc;
   margin-left: 10px;
-
   ol {
-    //margin: 0;
     padding-left: 10px;
     padding-right: 10px;
     list-style: none;
     li {
       padding: 5px 0;
-
     }
   }
 }
@@ -170,15 +146,12 @@ article {
     -webkit-font-smoothing: antialiased;
     line-height: 1.8;
     word-wrap: break-word;
-    & > pre {
+    &>pre {
       background: #2d2d2d;
-      //max-width: 100%;
       overflow-x: auto;
       code {
         background: transparent;
         overflow-x: auto;
-        //
-
       }
     }
   }
@@ -195,20 +168,14 @@ article {
     overflow-x: auto;
     background: #2d2d2d;
     margin: 20px 0;
-    //position: relative;
-
-
     figcaption {
       text-align: right;
       background: #d9d9d9;
     }
     .gutter {
-      //position: absolute;
-      //background: #c0c0c0;
-      //left: px;
       width: 20px;
       text-align: center;
-      pre{
+      pre {
         padding-right: 20px;
         text-align: right;
       }
@@ -217,22 +184,37 @@ article {
       border: none;
       padding: 0;
     }
-
     .line {
       height: 22.400000000000002px;
     }
-
   }
-  .post-info{
-    padding:  20px 0;
+  .post-info {
+    padding: 20px 0;
   }
 }
 
+.page-navigator {
+  text-align: right;
+  .page-number {
+    border: 1px solid #999;
+    padding: 6px;
+    margin: 4px;
+    color: #0000ee;
+    background: #b3b3b3;
+    &:hover {
+      background: #e6e6e6;
+    }
+    &.current {
+      background: #e6e6e6;
+    }
+  }
+}
 
 pre .comment,
 pre .title {
   color: #999;
 }
+
 pre .variable,
 pre .attribute,
 pre .tag,
@@ -247,6 +229,7 @@ pre .css .class,
 pre .css .pseudo {
   color: #f2777a;
 }
+
 pre .number,
 pre .preprocessor,
 pre .built_in,
@@ -255,11 +238,13 @@ pre .params,
 pre .constant {
   color: #f99157;
 }
+
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
   color: #9c9;
 }
+
 pre .string,
 pre .value,
 pre .inheritance,
@@ -268,9 +253,11 @@ pre .ruby .symbol,
 pre .xml .cdata {
   color: #9c9;
 }
+
 pre .css .hexcolor {
   color: #6cc;
 }
+
 pre .function,
 pre .python .decorator,
 pre .python .title,
@@ -281,6 +268,7 @@ pre .javascript .title,
 pre .coffeescript .title {
   color: #69c;
 }
+
 pre .keyword,
 pre .javascript .function {
   color: #c9c;

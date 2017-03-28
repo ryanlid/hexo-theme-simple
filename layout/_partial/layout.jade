@@ -8,9 +8,9 @@ html
     link(rel="stylesheet",href= url_for('css/style.css'))
     title= pageTitle
   body
-
     div.titlewrapper
       h1= config.title
+    //-顶部导航
     nav.clearfix
       ul
         each link,index in theme.menu
@@ -19,6 +19,10 @@ html
     div.wrap
       div.main
         block content
+
+      if page.next || page.prev
+        nav.page-navigator
+          != paginator({prev_text: __('上一页'), next_text: __('下一页')})
 
       aside.sidebar
         div
