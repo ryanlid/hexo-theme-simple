@@ -9,4 +9,4 @@ block content
         span!= ",并被添加「 " + list_tags(page.tags, {show_count: false, style: false}) + " 」标签，最后修改于"
         time(itemprop= "dateModified", content= date_xml(page.updated))= date(page.updated, "YYYY/M/D H:mm:ss")
       p= "本文链接："
-        a(href= url_for(page.permalink) title= page.title itemprop="url")= page.permalink
+        a(href= config.url + url_for(page.path) title= page.title itemprop="url")= config.url + url_for(page.path)
