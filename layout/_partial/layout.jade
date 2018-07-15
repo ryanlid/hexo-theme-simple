@@ -1,4 +1,5 @@
 - var pageTitle =  page.title ?  page.title+ " | " + config.title : ''|| page.category ?  page.category+ " | " + config.title : ''|| page.tag ?  page.tag+ " | " + config.title : '' || page.month ? page.month+ "月的归档 | " + config.title : '' || config.title
+- var pageDescription =  page.description ? page.description : '' || page.excerpt ? strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') : ''||config.description? config.description:''
 doctype html
 html
   head
@@ -7,21 +8,22 @@ html
     meta(name="theme-color", content="#ddd")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name="HandheldFriendly", content="True")
-    //- meta(name="description", content="")
+    meta(name="description", content= pageDescription)
     meta(http-equiv="Cache-Control", content="no-transform")
     meta(http-equiv="Cache-Control", content="no-siteapp")
     meta(name="generator", content="Hexo")
-    //- meta(name="description", content="")
+    meta(name="description", content= pageDescription)
     meta(property="og:type", content="website")
     meta(property="og:title", content= pageTitle)
     meta(property="og:url", content= config.url + url_for(page.path))
     meta(property="og:site_name", content= config.title)
-    //- meta(property="og:description", content="")
+    meta(property="og:description", content= pageDescription)
     meta(property="og:locale", content="zh-CN")
     meta(name="twitter:card", content="summary")
     meta(name="twitter:title", content= pageTitle)
-    //- meta(name="twitter:description", content="")
-    //- meta(name="twitter:creator", content="@")
+    meta(name="twitter:description", content= pageDescription)
+    if config.social.twitter
+      meta(name="twitter:creator", content= config.social.twitter)
     link(rel="alternate" href="./atom.xml" title= pageTitle)
     link(rel="canonical" href= config.url + url_for(page.path))
     link(rel="shortcut icon" href="/favicon.ico")
