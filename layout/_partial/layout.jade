@@ -2,9 +2,31 @@
 doctype html
 html
   head
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="theme-color", content="#ddd")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="HandheldFriendly", content="True")
+    //- meta(name="description", content="")
+    meta(http-equiv="Cache-Control", content="no-transform")
+    meta(http-equiv="Cache-Control", content="no-siteapp")
+    meta(name="generator", content="Hexo")
+    //- meta(name="description", content="")
+    meta(property="og:type", content="website")
+    meta(property="og:title", content= pageTitle)
+    meta(property="og:url", content= config.url + url_for(page.path))
+    meta(property="og:site_name", content= config.title)
+    //- meta(property="og:description", content="")
+    meta(property="og:locale", content="zh-CN")
+    meta(name="twitter:card", content="summary")
+    meta(name="twitter:title", content= pageTitle)
+    //- meta(name="twitter:description", content="")
+    //- meta(name="twitter:creator", content="@")
+    link(rel="alternate" href="./atom.xml" title= pageTitle)
+    link(rel="canonical" href= config.url + url_for(page.path))
+    link(rel="shortcut icon" href="/favicon.ico")
+    link(rel="icon" sizes="192x192" href="./images/icon.png" )
+    link(rel="apple-touch-icon" sizes="144x144" href="./images/touch-icon.png" )
     link(rel="stylesheet",href= url_for('css/style.css'))
     title= pageTitle
   body
