@@ -1,15 +1,39 @@
 @import (inline) "https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css";
+
 * {
   box-sizing: border-box;
 }
 
+@bgColor: rgba(204, 204, 204, 0.8);
+
 body {
-  color: #666;
+  color: #1a1a1a;
   font-size: 14px;
   font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica,Arial', sans-serif;
-  background: #fff url("https://static.lidong.me/img/2017/03/roman-logov-100555.jpg") no-repeat fixed;
+  background: url("https://static.lidong.me/upload/images/QOfn0eAFx.jpg") no-repeat center fixed;
   background-size: cover;
   max-width: 100%;
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-768x432.jpg");
+  }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1024x576.jpg");
+  }
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1920x1080.jpg");
+  }
 }
 
 a {
@@ -24,15 +48,19 @@ pre {
   background: #2d2d2d;
 }
 
-.titlewrapper {
-  width: 800px;
+.container {
+  width: 1000px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background: #fff;
+  background: @bgColor;
+}
+
+.titlewrapper {
   text-align: center;
   line-height: 60px;
   border-radius: 8px 8px 0 0;
+
   h1 {
     margin-bottom: 0;
   }
@@ -45,29 +73,34 @@ pre {
 }
 
 nav {
-  width: 800px;
+  width: 100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   border-radius: 0 0 8px 8px;
   overflow: hidden;
+
   &:after {
     clear: both;
   }
+
   ul {
     margin: 0;
     padding: 0;
   }
+
   li {
     list-style: none;
     width: 20%;
     float: left;
+
     a {
       display: block;
       height: 40px;
       line-height: 40px;
-      background: #fff;
+
+      // background: @bgColor;
       &:hover {
         background: #f2f2f2;
       }
@@ -76,12 +109,7 @@ nav {
 }
 
 .wrap {
-  width: 800px;
-  max-width: 100%;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
   padding: 20px;
   border-radius: 8px;
 }
@@ -92,6 +120,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+
   h1 {
     line-height: 125%;
     font-size: 20px;
@@ -101,19 +130,22 @@ nav {
 .sidebar {
   margin-left: auto;
   margin-right: auto;
-  background: #fff;
+
   ul {
     margin: 0;
     padding: 0;
+
     li {
       float: left;
       list-style: none;
     }
   }
+
   .tagcloud a {
     display: inline-block;
     margin: 4px 10px;
   }
+
   .archives li {
     padding: 0 20px;
   }
@@ -125,20 +157,21 @@ nav {
 }
 
 footer {
-  margin: 10px auto;
+  margin: 10px auto 0;
   padding: 20px 0;
   width: 800px;
   max-width: 100%;
   text-align: center;
-  background: #fff;
+  background: @bgColor;
   border-radius: 8px;
 }
 
 //文章目录
 .toc-container {
   float: right;
-  border: solid 1px #cccccc;
+  border: solid 1px #ffffff;
   margin-left: 10px;
+
   ol {
     padding-left: 10px;
     padding-right: 10px;
@@ -152,28 +185,33 @@ footer {
 // 文章内容
 article {
   .article-content {
-    color: #444;
+    color: #333;
     font-size: 16px;
     font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体', 'Helvetica,Tahoma', 'Arial sans-serif';
     -webkit-font-smoothing: antialiased;
     line-height: 1.8;
     word-wrap: break-word;
+
     &>pre {
       background: #2d2d2d;
       overflow-x: auto;
+
       code {
         background: transparent;
         overflow-x: auto;
       }
     }
   }
+
   a {
-    color: #444;
+    color: #333;
     border-bottom: 2px dashed;
   }
+
   a:hover {
     border-bottom: solid;
   }
+
   img {
     border: 1px solid #ccc;
     display: block;
@@ -181,11 +219,18 @@ article {
     max-width: 100%;
     padding: 0;
   }
+
   code {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.6);
+    border: solid 1px #ffffff;
     padding: 3px 4px;
     margin: 0 2px;
   }
+
+  mark {
+    padding: 4px 5px;
+  }
+
   .highlight {
     max-width: 100%;
     padding: 6px 10px;
@@ -193,33 +238,41 @@ article {
     background: #2d2d2d;
     margin: 20px 0;
     border-radius: 8px;
+
     figcaption {
       text-align: right;
+
       span {
         color: #8f99a3;
       }
+
       a {
         color: #ccc;
         margin-left: 10px;
       }
     }
+
     .gutter {
       width: 20px;
       text-align: center;
+
       pre {
         padding-right: 10px;
         text-align: right;
         border-right: 1px solid;
       }
     }
+
     .code {
       padding-left: 10px;
     }
+
     td {
       border: none;
       padding: 0;
     }
   }
+
   .post-info {
     padding: 20px 0;
   }
@@ -227,6 +280,7 @@ article {
 
 .page-navigator {
   text-align: right;
+
   .page-number {
     display: inline-block;
     border: 1px solid #999;
@@ -234,11 +288,13 @@ article {
     margin: 4px;
     color: #0000ee;
     background: #e6e6e6;
+
     &:hover {
-      background: #b3b3b3;
+      background: #ddd;
     }
+
     &.current {
-      background: #868282;
+      background: #bbb;
     }
   }
 }
@@ -308,8 +364,9 @@ pre .javascript .function {
 }
 
 blockquote {
-  border-left: 3px solid rgba(0, 0, 0, 0.84);
-  background: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.4);
   padding-left: 17px;
   margin-left: 0;
+  margin-right: 0;
 }

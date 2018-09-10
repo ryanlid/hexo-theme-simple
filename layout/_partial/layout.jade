@@ -32,15 +32,15 @@ html
     link(rel="stylesheet",href= url_for('css/style.css'))
     title= pageTitle
   body
-    div.titlewrapper
+    div.titlewrapper.container
       h1= config.title
     //-顶部导航
-    nav.clearfix
+    nav.clearfix.container
       ul
         each link,index in theme.menu
           li
             a(href=url_for(link))= index
-    div.wrap
+    div.wrap.container
       div.main
         block content
 
@@ -56,6 +56,11 @@ html
         div.clearfix
           hr
           div.archives!= list_archives({show_count: false, format: "MMMM YYYY"})
-    footer
+    footer.container
       .copyrigt
-      | Power by hexo theme by oonnnoo
+      | Power by &nbsp;
+      a(href="https://github.com/hexojs/hexo" rel="nofollow noopener")= "hexojs"
+      | &nbsp;|&nbsp;Theme by&nbsp;
+      a(href="https://github.com/ryanlid/hexo-theme-simple" rel="nofollow noopener")= "simple"
+      | &nbsp;|&nbsp;Create by&nbsp;
+      a(href="https://lidong.me")= "Lidong"
