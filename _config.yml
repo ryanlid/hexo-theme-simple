@@ -2,7 +2,7 @@
 menu:
   Home: https://lidong.me
   Blog: /
-  Archives: /archives
-  Labs: https://labs.lidong.me/
+  Tools: /tools/
+  List: https://lidong.me/list
   OldBlog: https://blog.lidong.me
 rss: /blog/atom.xml
