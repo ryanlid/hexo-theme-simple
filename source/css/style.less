@@ -349,3 +349,20 @@ blockquote {
   margin-left: 0;
   margin-right: 0;
 }
+
+.headerlink{
+  border: none;
+  &::before{
+    font-size: 10px;
+    width: 26px;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    content: '🔗';
+  }
+}
+
+.gist .gist-data{
+  max-height: 200px;
+  overflow: auto;
+}
