@@ -1,22 +1,42 @@
-@import (inline) "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+@import (inline)
+  "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
 
 * {
   box-sizing: border-box;
 }
 
-@bgColor: rgba(204, 204, 204, 0.9);
+@bgColor: rgba(130, 130, 130, 0.8);
 
 body {
-  color: #1a1a1a;
+  color: #eee;
   font-size: 14px;
-  font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica,Arial', sans-serif;
-  background: url("https://static.lidong.me/upload/images/QOfn0eAFx.jpg") no-repeat center fixed;
+  font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light",
+    "Helvetica Neue Light", "Helvetica Neue", "Helvetica,Arial", sans-serif;
+  background: #999999 no-repeat fixed center;
   background-size: cover;
   max-width: 100%;
 }
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-768x432.jpg");
+  }
+}
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1024x576.jpg");
+  }
+}
 
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+  body {
+    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1920x1080.jpg");
+  }
+}
 a {
-  color: #0000ee;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -81,7 +101,7 @@ nav {
 
       // background: @bgColor;
       &:hover {
-        background: #f2f2f2;
+        background: #acacac;
       }
     }
   }
@@ -165,14 +185,12 @@ footer {
 // 文章内容
 article {
   .article-content {
-    color: #333;
     font-size: 16px;
-    font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'SimSun', '宋体', 'Helvetica,Tahoma', 'Arial sans-serif';
     -webkit-font-smoothing: antialiased;
     line-height: 1.8;
     word-wrap: break-word;
 
-    &>pre {
+    & > pre {
       background: #2d2d2d;
       overflow-x: auto;
 
@@ -184,7 +202,7 @@ article {
   }
 
   a {
-    color: #333;
+    color: #ccc;
     border-bottom: 2px dashed;
   }
 
@@ -201,8 +219,8 @@ article {
   }
 
   code {
-    background: rgba(255, 255, 255, 0.6);
-    border: solid 1px #ffffff;
+    background: rgba(204, 204, 204, 0.6);
+    border: solid 1px #ccc;
     padding: 3px 4px;
     margin: 0 2px;
   }
@@ -265,7 +283,7 @@ article {
     border: 1px solid #999;
     padding: 10px;
     margin: 4px;
-    color: #0000ee;
+    color: #ccc;
     background: #e6e6e6;
 
     &:hover {
@@ -350,19 +368,19 @@ blockquote {
   margin-right: 0;
 }
 
-.headerlink{
+.headerlink {
   border: none;
-  &::before{
+  &::before {
     font-size: 10px;
     width: 26px;
     display: inline-block;
     text-align: center;
     border: none;
-    content: '🔗';
+    content: "🔗";
   }
 }
 
-.gist .gist-data{
+.gist .gist-data {
   max-height: 200px;
   overflow: auto;
 }
