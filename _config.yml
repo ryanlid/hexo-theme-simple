@@ -1,8 +1,6 @@
 # Header
+index: https://lidong.me/blog/
 menu:
-  Home: https://lidong.me
-  Blog: /
-  Tools: /tools/
-  List: https://lidong.me/list
-  OldBlog: https://blog.lidong.me
+  HOME: https://lidong.me
+  BLOG: /
 rss: /blog/atom.xml

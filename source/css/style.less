@@ -1,50 +1,178 @@
-@import (inline)
-  "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
-
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+main {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  -webkit-appearance: button;
+}
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
 * {
   box-sizing: border-box;
 }
 
-@bgColor: rgba(0, 0, 0, 0.9);
+@bgColor: #ffffff;
+@fontColor: rgba(0, 0, 0, 0.84);
+@prebgColor: #cdcdcd;
 
 body {
-  color: rgb(205, 205, 205);
+  color: @fontColor;
   font-size: 14px;
-  font-family: "-apple-system", "Open Sans", "HelveticaNeue-Light",
-    "Helvetica Neue Light", "Helvetica Neue", "Helvetica,Arial", sans-serif;
-  background: #999999 no-repeat fixed center;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  background: #e2e2e2 no-repeat fixed center;
   background-size: cover;
   max-width: 100%;
 }
-/* 小屏幕（平板，大于等于 768px） */
-@media (min-width: 768px) {
-  body {
-    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-768x432.jpg");
-  }
-}
-/* 中等屏幕（桌面显示器，大于等于 992px） */
-@media (min-width: 992px) {
-  body {
-    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1024x576.jpg");
-  }
-}
 
-/* 大屏幕（大桌面显示器，大于等于 1200px） */
-@media (min-width: 1200px) {
-  body {
-    background-image: url("https://static.lidong.me/upload/images/QOfn0eAFx-1920x1080.jpg");
-  }
-}
 a {
-  color: #fff;
+  color: @fontColor;
   text-decoration: none;
 }
 
 pre {
   margin: 0;
   padding: 0;
-  color: #ccc;
-  background: #2d2d2d;
+  color: @fontColor;
+  background: @prebgColor;
 }
 
 .container {
@@ -56,13 +184,18 @@ pre {
 }
 
 .titlewrapper {
-  text-align: center;
   line-height: 60px;
   border-radius: 8px 8px 0 0;
-
+  background: @bgColor;
+  .container {
+    display: flex;
+    align-items: center;
+  }
   h1 {
     margin-top: 0;
     margin-bottom: 0;
+    padding: 0 20px;
+    flex: none;
   }
 }
 
@@ -88,21 +221,21 @@ nav {
   ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
   }
 
   li {
     list-style: none;
-    width: 20%;
-    float: left;
+    width: 60px;
 
     a {
       display: block;
       height: 40px;
       line-height: 40px;
 
-      // background: @bgColor;
       &:hover {
-        background: #acacac;
+        color: rgba(0, 0, 0, 0.6);
       }
     }
   }
@@ -169,7 +302,7 @@ footer {
 //文章目录
 .toc-container {
   float: right;
-  border: solid 1px #ffffff;
+  border: solid 1px @fontColor;
   margin-left: 10px;
   background: @bgColor;
 
@@ -192,7 +325,7 @@ article {
     word-wrap: break-word;
 
     & > pre {
-      background: #2d2d2d;
+      background: @prebgColor;
       overflow-x: auto;
 
       code {
@@ -203,7 +336,7 @@ article {
   }
 
   a {
-    color: #ccc;
+    color: @fontColor;
     border-bottom: 2px dashed;
   }
 
@@ -212,7 +345,7 @@ article {
   }
 
   img {
-    border: 1px solid #ccc;
+    border: 1px solid @fontColor;
     display: block;
     margin: 10px 0 5px;
     max-width: 100%;
@@ -221,7 +354,7 @@ article {
 
   code {
     background: rgba(204, 204, 204, 0.6);
-    border: solid 1px #ccc;
+    border: solid 1px @fontColor;
     padding: 3px 4px;
     margin: 0 2px;
   }
@@ -234,7 +367,7 @@ article {
     max-width: 100%;
     padding: 6px 10px;
     overflow-x: auto;
-    background: #2d2d2d;
+    background: @prebgColor;
     margin: 0 0 1em;
 
     figcaption {
@@ -245,7 +378,7 @@ article {
       }
 
       a {
-        color: #ccc;
+        color: @fontColor;
         margin-left: 10px;
       }
     }
@@ -284,22 +417,22 @@ article {
     border: 1px solid #999;
     padding: 10px;
     margin: 4px;
-    color: #ccc;
-    background: #000000;
+    color: @fontColor;
+    background: @bgColor;
 
     &:hover {
-      background: #333;
+      background: rgb(240, 240, 240);
     }
 
     &.current {
-      background: #666;
+      background: rgb(240, 240, 240);
     }
   }
 }
 
 pre .comment,
 pre .title {
-  color: #999;
+  color: @fontColor;
 }
 
 pre .variable,

@@ -43,14 +43,16 @@ html
           .catch(err => console.log("service worker not registered"));
       }
   body
-    div.titlewrapper.container
-      h1= config.title
-    //-顶部导航
-    nav.clearfix.container
-      ul
-        each link,index in theme.menu
-          li
-            a(href=url_for(link))= index
+    div.titlewrapper
+      .container
+        h1
+          a(href=theme.index)= config.title
+        //-顶部导航
+        nav.clearfix
+          ul
+            each link,index in theme.menu
+              li
+                a(href=url_for(link))= index
     div.wrap.container
       div.main
         block content
