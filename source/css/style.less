@@ -151,7 +151,7 @@ template {
 
 @bgColor: #ffffff;
 @fontColor: rgba(0, 0, 0, 0.84);
-@prebgColor: #cdcdcd;
+@prebgColor: #f6f8fa;
 
 body {
   color: @fontColor;
@@ -172,7 +172,6 @@ pre {
   margin: 0;
   padding: 0;
   color: @fontColor;
-  background: @prebgColor;
 }
 
 .container {
@@ -353,7 +352,7 @@ article {
   }
 
   code {
-    background: rgba(204, 204, 204, 0.6);
+    background: $prebgColor;
     border: solid 1px @fontColor;
     padding: 3px 4px;
     margin: 0 2px;
@@ -365,13 +364,14 @@ article {
 
   .highlight {
     max-width: 100%;
-    padding: 6px 10px;
     overflow-x: auto;
-    background: @prebgColor;
     margin: 0 0 1em;
+    border: 1px solid #ddd;
 
     figcaption {
-      text-align: right;
+      padding:5px 10px;
+      background-color: #fafbfc;
+      border-bottom: 1px solid #e1e4e8;
 
       span {
         color: #8f99a3;
@@ -384,13 +384,13 @@ article {
     }
 
     .gutter {
-      width: 20px;
+      padding:0 0 0 10px;
       text-align: center;
 
       pre {
         padding-right: 10px;
         text-align: right;
-        border-right: 1px solid;
+        border-right: 1px solid #ddd;
       }
     }
 
