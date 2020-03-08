@@ -150,6 +150,7 @@ template {
 }
 
 @bgColor: #ffffff;
+@borderColor:#ddd;
 @fontColor: rgba(0, 0, 0, 0.84);
 @prebgColor: #f6f8fa;
 
@@ -352,8 +353,8 @@ article {
   }
 
   code {
-    background: $prebgColor;
-    border: solid 1px @fontColor;
+    background: @prebgColor;
+    border: solid 1px @borderColor;
     padding: 3px 4px;
     margin: 0 2px;
   }
@@ -366,7 +367,11 @@ article {
     max-width: 100%;
     overflow-x: auto;
     margin: 0 0 1em;
-    border: 1px solid #ddd;
+    border: 1px solid @borderColor;
+
+    table{
+      border-collapse:collapse
+    }
 
     figcaption {
       padding:5px 10px;
@@ -384,18 +389,14 @@ article {
     }
 
     .gutter {
-      padding:0 0 0 10px;
-      text-align: center;
-
-      pre {
-        padding-right: 10px;
-        text-align: right;
-        border-right: 1px solid #ddd;
-      }
+      padding:0 10px;
+      text-align: right;
+      background: #fff;
+      border-right: 1px solid @borderColor;
     }
 
     .code {
-      padding-left: 10px;
+      padding:0px 10px;
     }
 
     td {
