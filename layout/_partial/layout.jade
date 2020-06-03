@@ -38,7 +38,7 @@ html(lang="zh-CN")
     script.
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/blog/sw.js")
+          .register("/blog/sw.js?t=20200603")
           .then(reg => console.log("service worker registered"))
           .catch(err => console.log("service worker not registered"));
       }
